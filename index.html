@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>预约详情</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="phone">
+    <header class="top">
+      <nav class="nav">
+        <button class="back" aria-label="返回"></button>
+        <h1>预约详情</h1>
+        <div class="capsule" aria-hidden="true">
+          <span class="dot">•••</span>
+          <span class="line"></span>
+          <span class="circle"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="main-card">
+        <h2 class="school">广东医科大学东莞校区</h2>
+
+        <div class="qr-card">
+          <h3>通行二维码</h3>
+          <img class="qr" src="./assets/qr.png?v=2" alt="通行二维码" />
+          <ol class="tips">
+            <li>本通行二维码用于到访单位的通行，仅供到访者本人使用，请妥善保管。</li>
+            <li>禁止将本二维码授予他人使用，否则产生的一切后果由到访人负责。</li>
+            <li>二维码有效期为到访当天内有效，请注意有效期限。</li>
+            <li>到访人请遵守国家法律法规以及到访单位的各类安全、消防、保卫及保密等规章制度。</li>
+            <li>如有疑问，请联系受访人。</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="visit-card">
+        <div class="visit-head">
+          <h3>拜访信息</h3>
+          <span>已离开</span>
+        </div>
+
+        <dl class="info-list">
+          <div>
+            <dt>受访人</dt>
+            <dd>孙雪荣</dd>
+          </div>
+          <div>
+            <dt>受访人手机号</dt>
+            <dd class="phone-number">13560837027</dd>
+          </div>
+          <div>
+            <dt>预约类型</dt>
+            <dd>主动预约</dd>
+          </div>
+          <div>
+            <dt>到访时间</dt>
+            <dd id="visit-date"></dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="bottom-action">
+      <button>再次预约</button>
+      <div class="home-indicator" aria-hidden="true"></div>
+    </footer>
+  </div>
+  <script>
+    const visitDate = document.getElementById('visit-date');
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    visitDate.textContent = `${year}-${month}-${day}`;
+  </script>
+</body>
+</html>
